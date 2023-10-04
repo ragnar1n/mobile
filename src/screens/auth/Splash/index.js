@@ -16,7 +16,7 @@ const Splash=()=>{
                 <Text style={styles.title}>Here!</Text>
             </View>
             
-            <Button title="Sign up"/>
+            <Button onPress='' title="Sign up"/>
             <Pressable hitSlop={20}>
                 <Text style={styles.footerText}>Sign in</Text>
             </Pressable>
