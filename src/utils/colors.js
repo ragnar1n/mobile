@@ -3,5 +3,6 @@ export const colors={
     white:'#fff',
     orange:'#fca34d',
     black:'#000',
-    gray:'#8d9bb5'
+    gray:'#8d9bb5',
+    lightGray:'#dadada'
 }

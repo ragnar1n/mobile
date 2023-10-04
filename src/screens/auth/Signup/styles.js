@@ -5,8 +5,6 @@ export const styles=StyleSheet.create({
     container:{
         padding:24,
         flexDirection:'column',
-        //justifyContent:'center',
-        //alignItems:'center',
         height:'100%',
         borderWidth:1
     },
@@ -36,6 +34,20 @@ export const styles=StyleSheet.create({
         textAlign:"center",
         color:colors.blue,
         width:'100%'
+},
+agreeRow:{
+    flexDirection:'row',
+    alignItems:'center'
+},
+agreeText:{
+    color:colors.blue,
+    marginHorizontal:14
+},
+agreeTextBold:{
+    fontWeight:'bold'
+},
+button:{
+    marginVertical:20
 }
 
 })
