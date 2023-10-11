@@ -10,4 +10,4 @@ const Button=({title,onPress,style})=>{
         </TouchableOpacity>
     )
 }
-export default Button
+export default React.memo(Button)

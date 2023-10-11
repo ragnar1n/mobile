@@ -4,7 +4,16 @@ import Button from "../../../components/Button";
 import { styles } from "./styles";
 
 
-const Splash=()=>{
+const Splash=({navigation})=>{
+
+    const onSignup=()=>{
+        navigation.navigate('Signup')
+    }
+
+    const onSignin=()=>{
+        navigation.navigate('Signin')
+    }
+
     return (
         
         <View style={styles.container}>
@@ -16,8 +25,8 @@ const Splash=()=>{
                 <Text style={styles.title}>Here!</Text>
             </View>
             
-            <Button onPress='' title="Sign up"/>
-            <Pressable hitSlop={20}>
+            <Button onPress={onSignup} title="Sign up"/>
+            <Pressable onPress={onSignin} hitSlop={20}>
                 <Text style={styles.footerText}>Sign in</Text>
             </Pressable>
         </View>
