@@ -27,4 +27,4 @@ const Signin=()=>{
     )
 }
 
-export default Signin
+export default React.memo(Signin)
