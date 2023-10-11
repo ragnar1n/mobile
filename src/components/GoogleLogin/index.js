@@ -4,6 +4,7 @@ import { styles } from "./styles";
 import { GoogleSignin,statusCodes } from "@react-native-google-signin/google-signin";
 
 
+
 const GoogleLogin=()=>{
     const signIn=async()=>{
         try{
@@ -24,7 +25,7 @@ const GoogleLogin=()=>{
     }
 
     return(
-        <TouchableOpacity activeOpacity={.6} style={styles.container}>
+        <TouchableOpacity activeOpacity={.6} onPress={signIn} style={styles.container}>
             <Image source={require('../../assets/Gmail.png')}/>
         </TouchableOpacity>
     )
