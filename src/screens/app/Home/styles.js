@@ -3,10 +3,12 @@ import {colors} from '../../../utils/colors'
 
 export const styles=StyleSheet.create({
     container:{
-        flexDirection:'row',
-        alignItems:'center',
+        justifyContent:'space-between',
+        flexDirection:'column',
+        alignItems:'flex-start',
         marginBottom:54,
-        marginLeft: 30
+        marginLeft: 30,
+
     },
     image:{
         width:18,
@@ -17,5 +19,8 @@ export const styles=StyleSheet.create({
         fontSize:26,
         fontWeight:'500',
         paddingHorizontal:16
+    },
+    list:{
+        paddingVertical:24
     }
 })
