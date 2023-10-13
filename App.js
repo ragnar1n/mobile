@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-
+import { Image } from 'react-native';
 import Splash from './src/screens/auth/Splash';
 import Signup from './src/screens/auth/Signup';
 import Signin from './src/screens/auth/Signin';
@@ -34,15 +34,18 @@ const Tabs=()=>{
           : require('./src/assets/home.png')
         }else if(route.name==='Favourites'){
           icon=focused
-          ? require('./src/assets/favourites-blue.png')
-          : require('./src/assets/favourites.png')
+          ? require('./src/assets/bookmark-blue.png')
+          : require('./src/assets/bookmark.png')
         }else if(route.name==='Profile'){
           icon=focused
           ? require('./src/assets/profile-blue.png')
           : require('./src/assets/profile.png')
         }
         return <Image style={{width:24,height:24}} source={icon}/>
-      }
+      },
+      headerShown:false,
+      tabBarShowLabel:false,
+      tabBarStyle:{borderTopColor:colors.lightGray}
     })}>
       <Tab.Screen name='Home' component={Home}/>
       <Tab.Screen name='Favourites' component={Favourites}/>
