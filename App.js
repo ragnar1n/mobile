@@ -6,6 +6,7 @@ import Signin from './src/screens/auth/Signin';
 import Home from './src/screens/app/Home';
 import Favourites from './src/screens/app/Favourites';
 import Profile from './src/screens/app/Profile';
+import ProductDetails from './src/screens/app/ProductDetails';
 
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import { NavigationContainer } from '@react-navigation/native';
@@ -14,6 +15,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import {colors} from './src/utils/colors';
+
 
 const WEB_CLIENT_ID= '671224213127-fkgpilpo3ese8loat0ht9hb9jokrmohg.apps.googleusercontent.com'
 const IOS_CLIENT_ID='671224213127-oheuvth8ojqsrrub0e53m2q0s5aobn5v.apps.googleusercontent.com'
@@ -79,6 +81,7 @@ const theme={
           isSignedIn ? (
             <>
               <Stack.Screen name='Tabs' component={Tabs} options={{headerShown:false}}/>
+              <Stack.Screen name='ProductDetails' component={ProductDetails} options={{headerShown:false}}/>
             </> ) : (
               <>
               <Stack.Screen name="Splash" component={Splash} options={{headerShown:false}}/>
