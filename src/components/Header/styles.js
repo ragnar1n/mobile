@@ -19,7 +19,7 @@ export const styles=StyleSheet.create({
     icon:{
         width:24,
         height:24,
-        marginRight:72
+
     },
     space:{
         width:24
