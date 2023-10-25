@@ -9,5 +9,23 @@ export const styles=StyleSheet.create({
     },
     list:{
         
+    },
+    pagination:{
+        flexDirection:'row',
+        alignItems:'center',
+        position:'absolute',
+        bottom:50,
+        alignSelf:'center'
+    },
+    paginationLine:{
+        height:4,
+        width:20,
+        borderRadius:10,
+        backgroundColor:colors.white,
+        margin:5
+    },
+    activeLine:{
+        backgroundColor:colors.black,
+        width:30
     }
 })
