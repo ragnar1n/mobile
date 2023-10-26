@@ -1,12 +1,10 @@
 import { StyleSheet } from "react-native";
-import { colors } from "../../utils/colors";
+import {colors} from '../../utils/colors'
 
 export const styles=StyleSheet.create({
     container:{
-        padding:16,
-        flexDirection:'row',
-        alignItems:'center',
-        justifyContent:"space-between",
+        paddingHorizontal:16,
+        paddingVertical:12,
         shadowColor:'#000',
         shadowOffset:{
             width:0,
@@ -19,18 +17,20 @@ export const styles=StyleSheet.create({
         marginVertical:12,
         borderRadius:4
     },
-    title:{
-        color:colors.blue,
-        fontSize:18,
+    name:{
+        fontSize:20,
         fontWeight:'bold',
+        color:colors.black,
+        marginBottom:12
     },
-    subtitle:{
+    label:{
         color:colors.gray,
         fontSize:12,
-        marginTop:6
+        marginBottom:6
     },
-    arrow:{
-        height:32,
-        width:32
+    sectionTitle:{
+        fontWeight:'500',
+        fontSize:14,
+        color:colors.blue,
     }
 })

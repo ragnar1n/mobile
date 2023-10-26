@@ -3,7 +3,8 @@ import {colors} from '../../../utils/colors'
 
 export const styles=StyleSheet.create({
     container:{
-        padding:24
+        padding:24,
+        flex:1
     },
     name:{
         fontSize:20,
@@ -14,5 +15,8 @@ export const styles=StyleSheet.create({
     email:{
         color:colors.gray,
         fontSize:14,
+    },
+    content:{
+        flex:1
     }
 })
