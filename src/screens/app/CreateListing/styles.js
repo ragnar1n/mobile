@@ -5,10 +5,17 @@ export const styles=StyleSheet.create({
     container:{
         padding:24,
     },
-    item:{
-        paddingVertical:8,
-        paddingHorizontal:16,
-        marginVertical:8
+    uploadContainer:{
+        width:100,
+        height:100,
+        borderRadius:8,
+        borderWidth:1,
+        borderColor:colors.gray,
+        borderStyle:'dotted',
+        flexDirection:'column',
+        justifyContent:'center',
+        alignItems:'center',
+        marginRight:8
     },
     sectionTitle:{
         fontWeight:'500',
@@ -16,16 +23,43 @@ export const styles=StyleSheet.create({
         color:colors.blue,
         marginBottom:16
     },
-    sectionHeader:{
+    uploadCircle:{
+        width:32,
+        height:32,
+        borderRadius:20,
+        backgroundColor:colors.lightGray,
+        flexDirection:'column',
+        justifyContent:'center',
+        alignItems:'center'
+    },
+    image:{
+        width:100,
+        height:100,
+        borderRadius:8,
+        marginRight:8
+    },
+    uploadPlus:{
+        color:colors.white,
+        marginTop:-4,
+        fontSize:28
+    },
+    imageRow:{
         flexDirection:'row',
-        justifyContent:'space-between'
+        alignItems:'center',
+        flexWrap:'wrap'
     },
-    icon:{
+    imageContainer:{
+        flexDirection:'row',
+        marginRight:8
+    },
+    delete:{
         width:24,
-        height:24
+        height:24,
+        marginTop:-10,
+        marginLeft:-16
     },
-    button:{
-        paddingVertical:12,
-        marginTop:16
+    textarea:{
+        minHeight:100,
+        paddingTop:16
     }
 })
