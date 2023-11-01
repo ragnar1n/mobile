@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import { Image } from 'react-native';
 import Splash from './src/screens/auth/Splash';
 import Signup from './src/screens/auth/Signup';
@@ -10,6 +10,7 @@ import ProductDetails from './src/screens/app/ProductDetails';
 import Settings from './src/screens/app/Settings';
 import CreateListing from './src/screens/app/CreateListing';
 
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import { NavigationContainer } from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -17,7 +18,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import {colors} from './src/utils/colors';
-
+export const UserContext=React.createContext()
 
 const WEB_CLIENT_ID= '671224213127-fkgpilpo3ese8loat0ht9hb9jokrmohg.apps.googleusercontent.com'
 const IOS_CLIENT_ID='671224213127-oheuvth8ojqsrrub0e53m2q0s5aobn5v.apps.googleusercontent.com'
@@ -69,7 +70,15 @@ const Tabs=()=>{
 }
 
 const App=()=>{
-  const isSignedIn=true
+  const [user,setUser]=useState()
+
+  useEffect(()=>{
+    (async()=>{
+      const accessToken=await AsyncStorage.getItem('auth_token')
+      setUser({accessToken})
+    })
+  })
+
   useEffect(()=>{
     GoogleSignin.configure({
       scopes:['https://www.googleapis.com/auth/drive.readonly'],
@@ -87,10 +96,11 @@ const theme={
 
   return (
     <SafeAreaProvider>
-      <NavigationContainer theme={theme}>
+      <UserContext.Provider value={{user,setUser}}>
+        <NavigationContainer theme={theme}>
       <Stack.Navigator>
         {
-          isSignedIn ? (
+          user?.accessToken ? (
             <>
               <Stack.Screen name='Tabs' component={Tabs} options={{headerShown:false}}/>
               <Stack.Screen name='ProductDetails' component={ProductDetails} options={{headerShown:false}}/>
@@ -105,6 +115,8 @@ const theme={
         
       </Stack.Navigator>
     </NavigationContainer>
+    </UserContext.Provider>
+      
     </SafeAreaProvider>
   )
 }
