@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Pressable, View, Image, Text } from "react-native";
 import { styles } from "./styles";
 import Input from "../Input";
-import { validatePathConfig } from "@react-navigation/native";
 
 const Header=({title,onBackPress,onLogout,showBack,showLogout,showSearch,onSearchKeyword,keyword})=>{
     const [showSearchInput,setShowSearchInput]=useState(false)

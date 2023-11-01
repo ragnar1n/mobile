@@ -7,6 +7,8 @@ import Home from './src/screens/app/Home';
 import Favourites from './src/screens/app/Favourites';
 import Profile from './src/screens/app/Profile';
 import ProductDetails from './src/screens/app/ProductDetails';
+import Settings from './src/screens/app/Settings';
+import CreateListing from './src/screens/app/CreateListing';
 
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import { NavigationContainer } from '@react-navigation/native';
@@ -23,6 +25,16 @@ const REVERSED_CLIENT_ID='com.googleusercontent.apps.671224213127-oheuvth8ojqsrr
 
 const Stack=createNativeStackNavigator();
 const Tab=createBottomTabNavigator();
+
+const ProfileStack=()=>{
+  return(
+    <Stack.Navigator>
+      <Stack.Screen name='Profile' component={Profile} options={{headerShown:false}}/>
+      <Stack.Screen name='Settings' component={Settings} options={{headerShown:false}}/>
+      <Stack.Screen name='CreateListing' component={CreateListing} options={{headerShown:false}}/>
+    </Stack.Navigator>
+  )
+}
 
 const Tabs=()=>{
   return(
@@ -51,7 +63,7 @@ const Tabs=()=>{
     })}>
       <Tab.Screen name='Home' component={Home}/>
       <Tab.Screen name='Favourites' component={Favourites}/>
-      <Tab.Screen name='Profile' component={Profile}/>
+      <Tab.Screen name='Profile' component={ProfileStack}/>
     </Tab.Navigator>
   )
 }

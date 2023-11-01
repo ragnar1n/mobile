@@ -3,11 +3,7 @@ import {colors} from '../../../utils/colors'
 
 export const styles=StyleSheet.create({
     container:{
-        justifyContent:'space-between',
-        flexDirection:'column',
-        alignItems:'flex-start',
-        marginBottom:54,
-        marginLeft: 30,
+        padding:24
 
     },
     image:{

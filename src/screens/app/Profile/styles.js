@@ -3,19 +3,20 @@ import {colors} from '../../../utils/colors'
 
 export const styles=StyleSheet.create({
     container:{
-        flexDirection:'row',
-        alignItems:'center',
-        marginBottom:54,
-        marginLeft: 30
+        padding:24,
+        flex:1
     },
-    image:{
-        width:18,
-        height:18
+    name:{
+        fontSize:20,
+        fontWeight:'bold',
+        color:colors.black,
+        marginBottom:12
     },
-    title:{
-        color:colors.blue,
-        fontSize:26,
-        fontWeight:'500',
-        paddingHorizontal:16
+    email:{
+        color:colors.gray,
+        fontSize:14,
+    },
+    content:{
+        flex:1
     }
 })
